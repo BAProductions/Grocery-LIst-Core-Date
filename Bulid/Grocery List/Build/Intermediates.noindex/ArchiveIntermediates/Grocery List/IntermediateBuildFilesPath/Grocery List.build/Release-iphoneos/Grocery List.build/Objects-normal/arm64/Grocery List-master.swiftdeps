@@ -1,0 +1,11 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
+options: "f6f0b5e430f0cc885973e8594a780830"
+build_time: [1506898250, 673166000]
+inputs:
+  "/Users/BAproduction/Downloads/CameraApp/Grocery-LIst/G List/functions.swift": [9223372036, 854775807]
+  "/Users/BAproduction/Downloads/CameraApp/Grocery-LIst/G List/MasterViewController.swift": [9223372036, 854775807]
+  "/Users/BAproduction/Downloads/CameraApp/Grocery-LIst/G List/AppDelegate.swift": [9223372036, 854775807]
+  "/Users/BAproduction/Downloads/CameraApp/Grocery-LIst/G List/Hex To UIColor.swift": [9223372036, 854775807]
+  "/Users/BAproduction/Downloads/CameraApp/Grocery-LIst/Bulid/Grocery List/Build/Intermediates.noindex/ArchiveIntermediates/Grocery List/IntermediateBuildFilesPath/Grocery List.build/Release-iphoneos/Grocery List.build/DerivedSources/CoreDataGenerated/Notes/Notes+CoreDataClass.swift": [9223372036, 854775807]
+  "/Users/BAproduction/Downloads/CameraApp/Grocery-LIst/Bulid/Grocery List/Build/Intermediates.noindex/ArchiveIntermediates/Grocery List/IntermediateBuildFilesPath/Grocery List.build/Release-iphoneos/Grocery List.build/DerivedSources/CoreDataGenerated/Notes/Notes+CoreDataProperties.swift": [9223372036, 854775807]
+  "/Users/BAproduction/Downloads/CameraApp/Grocery-LIst/Bulid/Grocery List/Build/Intermediates.noindex/ArchiveIntermediates/Grocery List/IntermediateBuildFilesPath/Grocery List.build/Release-iphoneos/Grocery List.build/DerivedSources/CoreDataGenerated/Notes/Notes+CoreDataModel.swift": [9223372036, 854775807]
