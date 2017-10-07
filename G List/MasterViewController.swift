@@ -19,11 +19,8 @@
 
 
 import UIKit
-import MessageUI
-import AVFoundation
-import AudioToolbox
 import CoreData
-class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchDisplayDelegate,MFMailComposeViewControllerDelegate,NSFetchedResultsControllerDelegate {
+class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchDisplayDelegate,NSFetchedResultsControllerDelegate {
     //Cell Font Size for both label PS for simulater use 16 for phone use 20
     var fontSize:CGFloat = 20;
     //Cell Font Size for both label PS for simulater use 16 for phone use 20
@@ -51,6 +48,7 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
     var resetbutton:UIBarButtonItem!
     var markAsDoneButton:UIBarButtonItem!
     var addButton:UIBarButtonItem!
+    var spechToAddButton:UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -61,7 +59,8 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         //Add insert data button to nav bar
         addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        self.navigationItem.rightBarButtonItem = addButton
+        spechToAddButton = UIBarButtonItem(image:UIImage(named: "micSmall"), style: .plain, target: self, action: #selector(insertNewObject(_:)))
+        self.navigationItem.rightBarButtonItems = [spechToAddButton,addButton]
         //Large Title Setting
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
@@ -360,8 +359,6 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
     //Add items to list
     @objc func insertNewObject(_ sender: AnyObject) {
         // If appropriate, configure the new managed object.
-        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         //let indexPath = NSIndexPath(row: 0, section: 0)
         self.tableView.isEditing = false
         //Main UIAlertController
@@ -421,24 +418,24 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
             let tf2 = (alert.textFields?[1])! as UITextField?
             let TFF2 = noEmojiOrLatter(text: (tf2?.text?.digits)!)
             let noteItem = Notes(context: self.managedObjectContext)
-            DispatchQueue.main.async(){
-                if TFF == "" {
-                    //self.loadeDate()
-                } else {
-                    noteItem.note = TFF
-                    if TFF2 == "" || TFF2 == "1" {
-                        noteItem.amount = "1"
-                    }else{
-                        let numberFormatter = NumberFormatter()
-                        numberFormatter.numberStyle = .none
-                        let newNumber = numberFormatter.number(from:TFF2)
-                        noteItem.amount = newNumber?.stringValue
-                    }
-                    noteItem.checked = false
-                    noteItem.orderPosition = Double(self.notes.count)
-                    self.saveData(exitEditMode: false)
+            //DispatchQueue.main.async(){
+            if TFF == "" || TFF.isEmpty == true || TFF.trimmingCharacters(in: .whitespaces).isEmpty == true {
+                self.loadeDate()
+            } else {
+                noteItem.note = TFF
+                if TFF2 == "" || TFF2 == "1" {
+                    noteItem.amount = "1"
+                }else{
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.numberStyle = .none
+                    let newNumber = numberFormatter.number(from:TFF2)
+                    noteItem.amount = newNumber?.stringValue
                 }
+                noteItem.checked = false
+                noteItem.orderPosition = Double(self.notes.count)
+                self.saveData(exitEditMode: false)
             }
+            //}
         })
         add.isAccessibilityElement = true
         add.accessibilityTraits = UIAccessibilityTraitButton
@@ -453,7 +450,6 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
         alert.addAction(add)
         alert.addAction(cancel)
         //Precent UIAlertController
-        
         self.present(alert, animated:true, completion:nil)
     }
     // MARK: - Table View

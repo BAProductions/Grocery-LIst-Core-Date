@@ -1,0 +1,11 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
+options: "0d9539e9b1ac6670d7d1dcd2253775ff"
+build_time: [1507144494, 557214000]
+inputs:
+  "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/G List/functions.swift": [9223372036, 854775807]
+  "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/G List/MasterViewController.swift": [9223372036, 854775807]
+  "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/G List/AppDelegate.swift": [9223372036, 854775807]
+  "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/G List/Hex To UIColor.swift": [9223372036, 854775807]
+  "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/bulid/Grocery List/Build/Intermediates.noindex/Grocery List.build/Release-iphoneos/Grocery List.build/DerivedSources/CoreDataGenerated/Notes/Notes+CoreDataClass.swift": [9223372036, 854775807]
+  "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/bulid/Grocery List/Build/Intermediates.noindex/Grocery List.build/Release-iphoneos/Grocery List.build/DerivedSources/CoreDataGenerated/Notes/Notes+CoreDataProperties.swift": [9223372036, 854775807]
+  "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/bulid/Grocery List/Build/Intermediates.noindex/Grocery List.build/Release-iphoneos/Grocery List.build/DerivedSources/CoreDataGenerated/Notes/Notes+CoreDataModel.swift": [9223372036, 854775807]
