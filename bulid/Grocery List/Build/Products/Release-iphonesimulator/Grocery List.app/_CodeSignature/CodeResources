@@ -48,9 +48,17 @@
 		<data>
 		jUzAVDZErJq8r4xRQMYF5Kc4BgE=
 		</data>
+		<key>Frameworks/libswiftAVFoundation.dylib</key>
+		<data>
+		8BuTgJ4nq38/xvKx2dixkjYTnfw=
+		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
 		qurLV6ASU8mQg6hSis0NQB/CW1w=
+		</data>
+		<key>Frameworks/libswiftCoreAudio.dylib</key>
+		<data>
+		0LiQBWqabjyjOZCZgiDpxn9IplE=
 		</data>
 		<key>Frameworks/libswiftCoreData.dylib</key>
 		<data>
@@ -67,6 +75,10 @@
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
 		xtnAPCEiJYUdXpCiYDhAbUDyztA=
+		</data>
+		<key>Frameworks/libswiftCoreMedia.dylib</key>
+		<data>
+		nkV7yB2rXkYxUpXASUgDg16jg6k=
 		</data>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<data>
@@ -100,9 +112,13 @@
 		<data>
 		Qxf5a65V07i/A7wgX+teH5q14Fc=
 		</data>
+		<key>Frameworks/libswiftsimd.dylib</key>
+		<data>
+		HH5AsF6Y+aWaeAGIEOJ8+FHjDBs=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		avT2y+du++Gm0GC+gJfhn7ot6vY=
+		ZN411ku/AmjbtkA2qrJVXOFq94Y=
 		</data>
 		<key>Notes.momd/Nots.mom</key>
 		<data>
@@ -284,6 +300,17 @@
 			zk4M8Nt4RUdrZyscD2Fls3DuhrSZpwnGFwXIWTdHmrw=
 			</data>
 		</dict>
+		<key>Frameworks/libswiftAVFoundation.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8BuTgJ4nq38/xvKx2dixkjYTnfw=
+			</data>
+			<key>hash2</key>
+			<data>
+			o0kDHBby4T1bDcrkeIu0ifYkGTlDXRr1wYx3Bsx/Lu8=
+			</data>
+		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<dict>
 			<key>hash</key>
@@ -293,6 +320,17 @@
 			<key>hash2</key>
 			<data>
 			7g5u9xVmeL2x3YSvFqXZhxdfcRsOXPmsS+j0i6zZVio=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftCoreAudio.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0LiQBWqabjyjOZCZgiDpxn9IplE=
+			</data>
+			<key>hash2</key>
+			<data>
+			JCwAFlj1LAeEsutekaqPr8ngRIW7S2eZgftLJFeiTWo=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreData.dylib</key>
@@ -337,6 +375,17 @@
 			<key>hash2</key>
 			<data>
 			8GBMTrp2fvowWqZYXdc/1KaTqt0gKDu3ww9pvgUTcYc=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftCoreMedia.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nkV7yB2rXkYxUpXASUgDg16jg6k=
+			</data>
+			<key>hash2</key>
+			<data>
+			MDOIA5d28M4WA7oeSD79aLVCnQF4UKddYyJ8I32CsXI=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftDarwin.dylib</key>
@@ -425,6 +474,17 @@
 			<key>hash2</key>
 			<data>
 			uqRv4mfYCpZmuhGmN+AqH/r59QAbG39PbpECBEz/hrE=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftsimd.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HH5AsF6Y+aWaeAGIEOJ8+FHjDBs=
+			</data>
+			<key>hash2</key>
+			<data>
+			R60LYnD1vqthglEay060Ok6z67Je9J4fFkJ9OyyEJtg=
 			</data>
 		</dict>
 		<key>Notes.momd/Nots.mom</key>

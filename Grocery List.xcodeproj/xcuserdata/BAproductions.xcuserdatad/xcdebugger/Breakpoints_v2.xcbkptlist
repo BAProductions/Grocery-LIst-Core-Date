@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "G List/MasterViewController.swift"
-            timestampString = "529019745.1357"
+            timestampString = "529182989.068799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
             landmarkName = "insertNewObject(_:)"
             landmarkType = "7">
          </BreakpointContent>

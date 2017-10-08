@@ -174,6 +174,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import UIKit;
 @import CoreData;
+@import Speech;
 @import Foundation;
 @import CoreGraphics;
 #endif
@@ -211,10 +212,11 @@ SWIFT_CLASS("_TtC12Grocery_List11AppDelegate")
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12Grocery_List20MasterViewController")
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, SFSpeechRecognitionTaskDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 @property (nonatomic, weak) IBOutlet UISearchBar * _Null_unspecified searchBar;
 - (void)viewDidLoad;
 - (void)inverted;
+- (void)loadeSpeach:(id _Nonnull)sender;
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated;
 - (void)deleteMulitypleRows:(id _Nonnull)sender;
 - (void)resetChecks:(id _Nonnull)sender;

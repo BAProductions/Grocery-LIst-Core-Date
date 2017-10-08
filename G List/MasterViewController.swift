@@ -20,7 +20,8 @@
 
 import UIKit
 import CoreData
-class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchDisplayDelegate,NSFetchedResultsControllerDelegate {
+import Speech
+class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchDisplayDelegate,NSFetchedResultsControllerDelegate,SFSpeechRecognitionTaskDelegate {
     //Cell Font Size for both label PS for simulater use 16 for phone use 20
     var fontSize:CGFloat = 20;
     //Cell Font Size for both label PS for simulater use 16 for phone use 20
@@ -49,6 +50,11 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
     var markAsDoneButton:UIBarButtonItem!
     var addButton:UIBarButtonItem!
     var spechToAddButton:UIBarButtonItem!
+    //Speach Things
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))  //1
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -59,7 +65,7 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         //Add insert data button to nav bar
         addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        spechToAddButton = UIBarButtonItem(image:UIImage(named: "micSmall"), style: .plain, target: self, action: #selector(insertNewObject(_:)))
+        spechToAddButton = UIBarButtonItem(image:UIImage(named: "micSmall"), style: .plain, target: self, action: #selector(loadeSpeach(_:)))
         self.navigationItem.rightBarButtonItems = [spechToAddButton,addButton]
         //Large Title Setting
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -146,6 +152,37 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
             self.tableView.backgroundColor = UIColor(hexString: "#fffefc")
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
             
+        }
+    }
+    @objc func loadeSpeach(_ sender: Any) {
+        speechRecognizer?.delegate = self as? SFSpeechRecognizerDelegate  //3
+        
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
+            
+            //var isButtonEnabled = false
+            switch authStatus {  //5
+            case .authorized:
+                //isButtonEnabled = true
+                let errorAlert = Alert.errorAlert(title: "Success", message: "User Allowed access to speech recognition")
+                self.present(errorAlert, animated:true)
+            case .denied:
+                //isButtonEnabled = false
+                let errorAlert = Alert.errorAlert(title: "Error", message: "User denied access to speech recognition", cancelButton: false, completion: nil)
+                self.present(errorAlert, animated:true)
+            case .restricted:
+                //isButtonEnabled = false
+                let errorAlert = Alert.errorAlert(title: "Error", message: "Speech recognition restricted on this device", cancelButton: false, completion: nil)
+                self.present(errorAlert, animated:true)
+            case .notDetermined:
+                //isButtonEnabled = false
+                let errorAlert = Alert.errorAlert(title: "Error", message: "Speech recognition not yet authorized", cancelButton: false, completion: nil)
+                self.present(errorAlert, animated:true)
+                print("Speech recognition not yet authorized")
+            }
+            
+//            OperationQueue.main.addOperation() {
+//                self.spechToAddButton.isEnabled = isButtonEnabled
+//            }
         }
     }
     //Load Date For UITableView
