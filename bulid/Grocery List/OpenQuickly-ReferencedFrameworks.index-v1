@@ -3,6 +3,7 @@
 <plist version="1.0">
 <array>
 	<string>Speech</string>
+	<string>QuartzCore</string>
 	<string>AppKit</string>
 	<string>CoreData</string>
 	<string>Cocoa</string>

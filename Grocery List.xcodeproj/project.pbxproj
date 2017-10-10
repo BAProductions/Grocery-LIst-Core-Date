@@ -18,7 +18,7 @@
 		0ADF20A91CF36BCC009F4C5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF20AB1CF36BCC009F4C5A /* InfoPlist.strings */; };
 		0AE5A7EE1CF3580D002CB4AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AE5A7F01CF3580D002CB4AC /* Localizable.strings */; };
 		CB839B221F7AE230005653CE /* Hex To UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB839B211F7AE230005653CE /* Hex To UIColor.swift */; };
-		CBB502B81F8AAD3B008F0122 /* errorAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB502B71F8AAD3B008F0122 /* errorAlerts.swift */; };
+		CBB502B81F8AAD3B008F0122 /* basicAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB502B71F8AAD3B008F0122 /* basicAlerts.swift */; };
 		CBD1D2561F7B058000BBF6F9 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBD1D2541F7B058000BBF6F9 /* Notes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,7 @@
 		0AE5A7F11CF3583A002CB4AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0AE5A7F21CF3583C002CB4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB839B211F7AE230005653CE /* Hex To UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hex To UIColor.swift"; sourceTree = "<group>"; };
-		CBB502B71F8AAD3B008F0122 /* errorAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorAlerts.swift; sourceTree = "<group>"; };
+		CBB502B71F8AAD3B008F0122 /* basicAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicAlerts.swift; sourceTree = "<group>"; };
 		CBD1D2551F7B058000BBF6F9 /* Nots.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nots.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				CB839B211F7AE230005653CE /* Hex To UIColor.swift */,
-				CBB502B71F8AAD3B008F0122 /* errorAlerts.swift */,
+				CBB502B71F8AAD3B008F0122 /* basicAlerts.swift */,
 				CBD1D2541F7B058000BBF6F9 /* Notes.xcdatamodeld */,
 				0A7694111CEE814000FC0CD3 /* lauch-screen.png */,
 				0A53D6ED1CE4A76A00A8B2EF /* AppDelegate.swift */,
@@ -198,7 +198,7 @@
 				0A53D7201CE4C8A300A8B2EF /* functions.swift in Sources */,
 				0A53D6F01CE4A76A00A8B2EF /* MasterViewController.swift in Sources */,
 				0A53D6EE1CE4A76A00A8B2EF /* AppDelegate.swift in Sources */,
-				CBB502B81F8AAD3B008F0122 /* errorAlerts.swift in Sources */,
+				CBB502B81F8AAD3B008F0122 /* basicAlerts.swift in Sources */,
 				CBD1D2561F7B058000BBF6F9 /* Notes.xcdatamodeld in Sources */,
 				CB839B221F7AE230005653CE /* Hex To UIColor.swift in Sources */,
 			);

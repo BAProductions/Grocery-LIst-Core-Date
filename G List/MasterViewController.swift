@@ -21,6 +21,7 @@
 import UIKit
 import CoreData
 import Speech
+import QuartzCore
 class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchDisplayDelegate,NSFetchedResultsControllerDelegate,SFSpeechRecognitionTaskDelegate {
     //Cell Font Size for both label PS for simulater use 16 for phone use 20
     var fontSize:CGFloat = 20;
@@ -66,7 +67,8 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
         //Add insert data button to nav bar
         addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         spechToAddButton = UIBarButtonItem(image:UIImage(named: "micSmall"), style: .plain, target: self, action: #selector(loadeSpeach(_:)))
-        self.navigationItem.rightBarButtonItems = [spechToAddButton,addButton]
+        //self.navigationItem.rightBarButtonItems =
+        self.navigationItem.setRightBarButtonItems([spechToAddButton,addButton], animated: true)
         //Large Title Setting
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
@@ -114,7 +116,6 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
         self.tableView.allowsMultipleSelection = false
         self.tableView.allowsSelectionDuringEditing = true
         NotificationCenter.default.addObserver(self, selector: #selector(self.inverted), name: .UIAccessibilityInvertColorsStatusDidChange, object: nil)
-        
     }
     // Invert Color Of App
     @objc func inverted() {
@@ -163,19 +164,25 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
             switch authStatus {  //5
             case .authorized:
                 //isButtonEnabled = true
-                let errorAlert = Alert.errorAlert(title: "Success", message: "User Allowed access to speech recognition")
+                let errorAlert = Alert.basicAlerts(title: "Success", message: "User Allowed access to speech recognition", cancelButton: false, completion: {
+                    self.loadeDate()
+                })
                 self.present(errorAlert, animated:true)
             case .denied:
                 //isButtonEnabled = false
-                let errorAlert = Alert.errorAlert(title: "Error", message: "User denied access to speech recognition", cancelButton: false, completion: nil)
+                let errorAlert = Alert.basicAlerts(title: "Error", message: "User denied access to speech recognition press ok to open setting", cancelButton: true, completion: {
+                    UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
+                })
                 self.present(errorAlert, animated:true)
             case .restricted:
                 //isButtonEnabled = false
-                let errorAlert = Alert.errorAlert(title: "Error", message: "Speech recognition restricted on this device", cancelButton: false, completion: nil)
+                let errorAlert = Alert.basicAlerts(title: "Error", message: "Speech recognition restricted on this device", cancelButton: false, completion: {
+                })
                 self.present(errorAlert, animated:true)
             case .notDetermined:
                 //isButtonEnabled = false
-                let errorAlert = Alert.errorAlert(title: "Error", message: "Speech recognition not yet authorized", cancelButton: false, completion: nil)
+                let errorAlert = Alert.basicAlerts(title: "Error", message: "Speech recognition not yet authorized", cancelButton: false, completion: {
+                })
                 self.present(errorAlert, animated:true)
                 print("Speech recognition not yet authorized")
             }
@@ -240,11 +247,13 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
         if editing == true || editing == true && (tableView.gestureRecognizers != nil) {
             //], animated: true)
             self.setToolbarItems([resetbutton,spacer,markAsDoneButton,spacer,deleteButton], animated: true)
-            self.navigationItem.rightBarButtonItem = nil
+            //self.navigationItem.rightBarButtonItems = []
+            self.navigationItem.setRightBarButtonItems([], animated: true)
             self.tableView.allowsSelection = true
         }else{
             self.setToolbarItems([resetbutton,spacer], animated: true)
-            self.navigationItem.rightBarButtonItem = addButton
+            //self.navigationItem.rightBarButtonItems = [spechToAddButton, addButton]
+            self.navigationItem.setRightBarButtonItems([spechToAddButton,addButton], animated: true)
             self.tableView.allowsSelection = false
         }
     }
