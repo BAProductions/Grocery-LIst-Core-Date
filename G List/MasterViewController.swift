@@ -51,12 +51,13 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
     var markAsDoneButton:UIBarButtonItem!
     var addButton:UIBarButtonItem!
     var spechToAddButton:UIBarButtonItem!
+    //SearchBar
+    @IBOutlet weak var searchBar: UISearchBar!
     //Speach Things
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))  //1
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         loadeDate()
@@ -88,6 +89,10 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = row;
         //self.tableView.hideSearchBar()
+        searchBar.showsScopeBar = false
+        searchBar.isAccessibilityElement = true
+        searchBar.accessibilityTraits = UIAccessibilityTraitHeader
+        searchBar.accessibilityLabel = "Search List"
         //UIToolBar Setting
         //let email = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(sendEmailButtonTapped(_:)))
         resetbutton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(resetChecks(_:)))
@@ -154,6 +159,23 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
             
         }
+    }
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar .resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    public func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        //searchBar.showsScopeBar = true
+        searchBar.sizeToFit()
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+    
+    public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        //searchBar.showsScopeBar = false
+        searchBar.sizeToFit()
+        searchBar.setShowsCancelButton(false, animated: true)
+        return true
     }
     @objc func loadeSpeach(_ sender: Any) {
         speechRecognizer?.delegate = self as? SFSpeechRecognizerDelegate  //3
@@ -244,6 +266,8 @@ class MasterViewController: UITableViewController,UISearchBarDelegate, UISearchD
     override func setEditing(_ editing: Bool, animated: Bool){
         super.setEditing(editing, animated: animated)
         tableView.setEditing(editing, animated: animated)
+        searchBar .resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
         if editing == true || editing == true && (tableView.gestureRecognizers != nil) {
             //], animated: true)
             self.setToolbarItems([resetbutton,spacer,markAsDoneButton,spacer,deleteButton], animated: true)

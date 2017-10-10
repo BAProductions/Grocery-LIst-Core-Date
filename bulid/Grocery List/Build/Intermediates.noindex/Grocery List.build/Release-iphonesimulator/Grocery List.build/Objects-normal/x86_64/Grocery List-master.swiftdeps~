@@ -1,6 +1,6 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "72fb95097d4cd5367a176b7c4898701f"
-build_time: [1507634499, 703354000]
+build_time: [1507654113, 693978000]
 inputs:
   "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/G List/functions.swift": [9223372036, 854775807]
   "/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/G List/MasterViewController.swift": [9223372036, 854775807]

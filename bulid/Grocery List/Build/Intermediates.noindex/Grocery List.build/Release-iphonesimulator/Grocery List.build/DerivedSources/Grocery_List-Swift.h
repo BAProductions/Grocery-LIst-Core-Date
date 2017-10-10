@@ -216,6 +216,9 @@ SWIFT_CLASS("_TtC12Grocery_List20MasterViewController")
 @property (nonatomic, weak) IBOutlet UISearchBar * _Null_unspecified searchBar;
 - (void)viewDidLoad;
 - (void)inverted;
+- (void)searchBarSearchButtonClicked:(UISearchBar * _Nonnull)searchBar;
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar * _Nonnull)searchBar SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)searchBarShouldEndEditing:(UISearchBar * _Nonnull)searchBar SWIFT_WARN_UNUSED_RESULT;
 - (void)loadeSpeach:(id _Nonnull)sender;
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated;
 - (void)deleteMulitypleRows:(id _Nonnull)sender;
