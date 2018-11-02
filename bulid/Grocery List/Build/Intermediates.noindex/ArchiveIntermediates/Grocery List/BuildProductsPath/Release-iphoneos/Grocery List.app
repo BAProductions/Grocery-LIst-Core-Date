@@ -1,1 +1,0 @@
-/Users/BAproduction/GitHub/Grocery-LIst-Core-Date/bulid/Grocery List/Build/Intermediates.noindex/ArchiveIntermediates/Grocery List/InstallationBuildProductsLocation/Applications/Grocery List.app

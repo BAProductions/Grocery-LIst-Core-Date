@@ -13,7 +13,6 @@
 		0A53D6F71CE4A76A00A8B2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A53D6F61CE4A76A00A8B2EF /* Assets.xcassets */; };
 		0A53D6FA1CE4A76A00A8B2EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A53D6F81CE4A76A00A8B2EF /* LaunchScreen.storyboard */; };
 		0A53D7201CE4C8A300A8B2EF /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53D71F1CE4C8A300A8B2EF /* functions.swift */; };
-		0A6DC1FA1CEE1FF000E5FF45 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6DC1F91CEE1FF000E5FF45 /* MessageUI.framework */; };
 		0A7694121CEE814000FC0CD3 /* lauch-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7694111CEE814000FC0CD3 /* lauch-screen.png */; };
 		0ADF20A91CF36BCC009F4C5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ADF20AB1CF36BCC009F4C5A /* InfoPlist.strings */; };
 		0AE5A7EE1CF3580D002CB4AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AE5A7F01CF3580D002CB4AC /* Localizable.strings */; };
@@ -25,13 +24,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		0A7694281CEE84D200FC0CD3 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -44,9 +43,7 @@
 		0A53D6F91CE4A76A00A8B2EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A53D6FB1CE4A76A00A8B2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A53D71F1CE4C8A300A8B2EF /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
-		0A6DC1F91CEE1FF000E5FF45 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0A7694111CEE814000FC0CD3 /* lauch-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauch-screen.png"; sourceTree = SOURCE_ROOT; };
-		0A7694191CEE84D200FC0CD3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		0ADF20A61CF359E8009F4C5A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0ADF20AA1CF36BCC009F4C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0ADF20AC1CF36BCF009F4C5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A6DC1FA1CEE1FF000E5FF45 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,8 +107,6 @@
 		0A7694181CEE84D200FC0CD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A6DC1F91CEE1FF000E5FF45 /* MessageUI.framework */,
-				0A7694191CEE84D200FC0CD3 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -249,6 +243,7 @@
 		0A53D7121CE4A76A00A8B2EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -273,8 +268,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: anacastellano@bellsouth.net (4JPS9MFQZ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: anacastellano@bellsouth.net (4JPS9MFQZ5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -308,6 +304,7 @@
 		0A53D7131CE4A76A00A8B2EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -332,8 +329,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: anacastellano@bellsouth.net (4JPS9MFQZ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: anacastellano@bellsouth.net (4JPS9MFQZ5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -361,12 +359,16 @@
 		0A53D7151CE4A76A00A8B2EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 9E43S32GJU;
+				ENTITLEMENTS_REQUIRED = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "G List/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -385,16 +387,22 @@
 		0A53D7161CE4A76A00A8B2EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 9E43S32GJU;
+				ENTITLEMENTS_REQUIRED = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "G List/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LLVM_LTO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "BAProduction.G-List3";
 				PRODUCT_NAME = "Grocery List";
 				PROVISIONING_PROFILE = "";
